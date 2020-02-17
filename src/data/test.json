@@ -1,0 +1,125 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "date": "Feb 15 2020",
+      "title": "快打造靜態網站的利器？Gatsby！",
+      "content": "Image by Johannes Plenio from Pixabay 前言 在這個科技日新月異的時代下，製作網頁的工具也是隨著時間演進下，不斷推陳出新。如果你曾經對於每天透過瀏覽器打開的網頁有一點的好奇心，會不會想要嘗試做一個自己專屬的網站呢？這時候我們就可以享受工具進步所帶",
+      "author": "Jimmy",
+      "img": "https://5xruby.tw/assets/images/post/image/2020-02-15-static-site-generator-gatsbyjs/cover-4e54029d.jpg"
+    },
+    {
+      "id": "2",
+      "date": "Feb 8 2020",
+      "title": "是誰在敲打我窗？什麼是 JWT ？",
+      "content": "大家好，今天要來跟大家說明一個知道誰在敲打你家窗戶的方法！？我們在網路的世界中可以透過 API (Application Programming Interface) 與各種應用程式互相交流、溝通、傳遞各種訊息，而如何驗證身份就變成一件重要的事情，即我們不應該將所有的資料都裸奔，",
+      "author": "Cindy",
+      "img": "https://5xruby.tw/assets/images/post/image/2020-02-08-what-is-jwt/what-is-jwt-f327abf1.jpg"
+    },
+    {
+      "id": "3",
+      "date": "Feb 1 2020",
+      "title": "你以為你以為的就是你以為的嗎？PM 的溝通小眉角",
+      "content": "前言 身為一個夾心餅乾的專案管理 PM ，上有老闆左有主管右有同事，外面還有出錢的客戶大大。完全就是草木皆兵，每天都跟打仗沒兩樣。 上述的狀況是你的日常生活嗎？ PM 除了需要掌握專案時程，另外一個最重要的技能，就是「溝通」。如果溝通技能不點滿，你可",
+      "author": "Liz",
+      "img": "https://5xruby.tw/assets/images/post/image/2020-02-01-pms-communication-methods/communication-d6f75749.jpeg"
+    },
+    {
+      "id": "4",
+      "date": "Jan 18 2020",
+      "title": "GitLab Auto DevOps 深入淺出，自動部署，連設定檔不用？！",
+      "content": "圖片作者：MustangJoe 圖片來源連結 開發網站過程中，環境部署或是寫設定檔是一件不簡單的事。比起寫程式，寫設定檔不是開發過程中那麼「頻繁」需要做的事情，所以熟練度跟寫程式比起來多少有落差。 每次要部署或是做 CI / CD 相關的設定時，幾乎都是拿手邊的設",
+      "author": "Johnson",
+      "img": "https://5xruby.tw/assets/images/post/image/2020-01-18-gitlab-auto-devops/gitlab-auto-devops-311a775b.jpg"
+    },
+    {
+      "id": "5",
+      "date": "Jan 4 2020",
+      "title": "是誰在哈囉? 如何搞定 SPA 與 API Server 的登入驗證",
+      "content": "大家好，新年快樂！對於現代 web 開發框架來說，登入驗證幾乎都有成熟的 library 可以使用，例如 Rails 可以搭配 Devise gem 快速的搭建一個會員登入的系統。但是如果在前後端分離的單頁式網頁（Single Page Application ，以下簡稱 SPA）上，該怎麼跟後端的",
+      "author": "Fred",
+      "img": "https://5xruby.tw/assets/images/post/image/2020-01-04-hello-spa-rails-api-server/hello-eab5eab2.jpg"
+    },
+    {
+      "id": "6",
+      "date": "Dec 28 2019",
+      "title": "寫隻 rake 讓你一行指令輕鬆跑報表",
+      "content": "什麼是 Rake？ Rake 是由大師 Jim Weirich 所開發的任務程式工具，就像是 Ruby 版的 Make，可以用來執行各式任務。 Rake 是以 Ruby 語法編寫任務於 Rakefile 檔案中，並用 command-line interface（CLI）輸入指令 $ rake 來執行任務。Rake 可以使用在任何",
+      "author": "吳兆召",
+      "img": "https://5xruby.tw/assets/images/post/image/2019-12-28-write-rake-to-export-report-easily/report-5c58086e.jpg"
+    },
+    {
+      "id": "7",
+      "date": "Dec 21 2019",
+      "title": "新手也可以輕鬆玩轉 SASS - @mixin and @include",
+      "content": "SASS (Syntactically Awesome Stylesheet) 是一種預處理語言 (pre-processing language)，透過 SASS 可以更有效、更結構化的產生 CSS，並有助於減少撰寫重複的樣式，讓你的 CSS 更易於維護。今天要跟大家分享的是 SASS 的 @mixin 與 @include。 SASS 提供兩種",
+      "author": "Grace Huang",
+      "img": "https://5xruby.tw/assets/images/post/image/2019-12-21-play-sass-mixin-and-include/mixin-86376190.jpg"
+    },
+    {
+      "id": "8",
+      "date": "Dec 14 2019",
+      "title": "如何著手設計你的第一個網站？",
+      "content": "前言 這篇文章主要是提供給初學網站設計或由平面設計轉網站設計新手的文章。 我將分享我在設計網站的過程，希望可以幫助新手在開始進行時不至於毫無頭緒。 另外，不管你是新手設計或是已經入行一陣子的設計師，在設計的領域上每個人獲得靈感的方式、設計流程都不",
+      "author": "Debby",
+      "img": "https://5xruby.tw/assets/images/post/image/2019-12-14-design-first-website/design-website-d3b20ce5.jpg"
+    },
+    {
+      "id": "9",
+      "date": "Dec 7 2019",
+      "title": "透過 amp-access 讓你在 Cache 頁面也能順利保持登入！",
+      "content": "（範例會以 Rails 來實作，登入的部分使用 devise 套件為例） 前言 不知不覺來到了 2019 年末。從 2016 年到現在，AMP 也越發成熟完整（但我怎麼還是覺得 bug 還是有點多w），有很多實用的 components 也有豐富的範例可以參考。如果想要大大地提升網站在手",
+      "author": "Meng-Ying Tsai",
+      "img": "https://5xruby.tw/assets/images/post/image/2019-12-07-amp-access-login/amp-access-login-c8d00eee.jpg"
+    },
+    {
+      "id": "10",
+      "date": "Nov 30 2019",
+      "title": "總覺得自己在工作上不夠稱職？論冒名頂替者症候群所帶來的影響",
+      "content": "(Cover Photo by John Schnobrich on Unsplash) 所謂「半路出家」的工程師 也許以下的故事對你／妳而言似曾相識： 之前沒有程式或相關背景的你／妳，透過自學或參加線上／實體課程，找到了第一份工程師的工作。 到了就職報到的第一天才發現，主管跟同事所說的話怎麼",
+      "author": "韓政璇",
+      "img": "https://5xruby.tw/assets/images/post/image/2019-11-30-imposter-syndrome/imposter-syndrome-88b19d28.jpg"
+    },
+    {
+      "id": "11",
+      "date": "Nov 23 2019",
+      "title": "CI/CD 從零開始 - 使用 CircleCI 部署 Node.JS App 到 GCP App Engine",
+      "content": "身處在講求效率的時代，完整的開發流程當然少不了 CI/CD。什麼是 CI/CD 呢？CI（Continuous integration）中文為「持續性整合」，目的是讓專案能夠在每一次的變動中都能通過一些檢驗來確保專案品質。 CD（Continuous Deployment）中文則為「自動化佈署」，讓專",
+      "author": "Mindy",
+      "img": "https://5xruby.tw/assets/images/post/image/2019-11-23-hello-ci-cd/hello-ci-cd-2507b6d9.jpg"
+    },
+    {
+      "id": "12",
+      "date": "Nov 16 2019",
+      "title": "VSCode 的奇幻旅程",
+      "content": "前言 「工欲善其事，必先利其器」，通常看到這個開頭，就知道今天要來介紹工具。在寫程式時，大家通常習慣的 Editor 是哪些呢? Vim、Emacs、Atom、Sublime、VSCode、記事本。而上述的 Editor 中，最廣為人知的就是被譽為「編輯器之神」的 Vim 和被譽為「神之編輯",
+      "author": "Vense",
+      "img": "https://5xruby.tw/assets/images/post/image/2019-11-16-adventure-of-vscode/vscode-cf3d1fb7.jpg"
+    },
+    {
+      "id": "13",
+      "date": "Nov 9 2019",
+      "title": "Hanami - 軌道外的風景",
+      "content": "前言 大家自助旅行時喜歡搭車還是自駕呢？有經驗的旅人會說「看情況」。熱門景點大多交通便利，雖然行程多少會受到路線和班次限制，但整體來說一般還是會因為各種方便，選擇搭乘大眾交通工具吧。那如果是要去比較特別的景點的話呢？或者是雖然是要去四通八",
+      "author": "趙子皓",
+      "img": "https://5xruby.tw/assets/images/post/image/2019-11-09-hanami-rb/sakura-5be9c1eb.jpg"
+    },
+    {
+      "id": "14",
+      "date": "Nov 2 2019",
+      "title": "勇者，成為時間的支配者吧！",
+      "content": "時間永遠是固定的24小時這麼多，如何掌握在有限的時間內取捨事情的優先順序？ PM 手中可能會有多個專案在進行，最有可能遇到的狀況，例如： 你一早進到公司，正打開電腦要回 A 專案客戶的訊息，結果不到兩秒鐘， B 客戶問你能不能開個簡短的視訊會議討論他剛剛新",
+      "author": "Winnie",
+      "img": "https://5xruby.tw/assets/images/post/image/2019-11-02-soldier-become-time-controller/thumbnail-77d683b1.jpeg"
+    },
+    {
+      "id": "15",
+      "date": "Oct 26 2019",
+      "title": "打造自己的 Form Builder",
+      "content": "通常我們在編寫 HTML 表單中的輸入標籤（或稱 Input Tag）時，都會在每個 Tag 前後加入一些附帶特定樣式，通常是 CSS Class 的 HTML Tag 作點綴修飾，本篇文章的目的為透過 Step by step 的方式，介紹如何透過繼承與拓展 Ruby on Rails 的 FormBuilder 來建立適用於",
+      "author": "慕凡",
+      "img": "https://5xruby.tw/assets/images/post/image/2019-10-26-make-your-own-form-builder-in-rails/thumbnail-656b8709.jpg"
+    }
+  ],
+  "postsError": []
+}

@@ -1,0 +1,178 @@
+{
+  "Navbar": [
+    { "text": "線上課程", "link": "/online", "img": "faGem" },
+    {
+      "text": "ASTRO Camp",
+      "link": "/astro",
+      "img": "faCompass",
+      "state": "報名優惠中"
+    },
+    { "text": "短期課程", "link": "/short" },
+    { "text": "專案開發", "link": "/dev" },
+    { "text": "企業代訓", "link": "/training" },
+    { "text": "空間租借", "link": "/space" },
+    { "text": "最新消息", "link": "/posts" }
+  ],
+  "mainMenu": {
+    "title": "關於五倍紅寶石 About 5xRuby",
+    "text": [
+      {
+        "titleOn": "網頁設計",
+        "titleUnder": "前後端課程教學",
+        "content": "帶你掌握程式技能轉職工程師，程式課程從入門到進階讓你快速上手，學員好評推薦轉職課程！"
+      },
+      {
+        "titleOn": "頂尖技術",
+        "titleUnder": "網頁製作、專案開發",
+        "content": "網站開發到行動裝置 App 工程服務、系統設計開發甚至系統架設，提供專業的建議與頂尖的技術。"
+      },
+      {
+        "titleOn": "資訊軟體開發",
+        "titleUnder": "技術顧問",
+        "content": "協助您將現有人力快速打造為 Ruby/Rails 團隊，無須經歷繁瑣的人才招募就有即戰力！"
+      },
+      {
+        "titleOn": "前後端工程師",
+        "titleUnder": "社群經營",
+        "content": "Ruby 社群經營、舉辦各類活動，促進 Ruby 社群發展，歡迎前後端工程師分享交流。"
+      }
+    ]
+  },
+  "hotLesson": {
+    "title": "熱門網頁設計課程推薦",
+    "content": [
+      {
+        "isRegistering": true,
+        "isNew": true,
+        "name": "工作上用得到的函數式程式設計：從觀念到實務 - 假日班",
+        "teacher": "蘇泰安 (Taian Su)",
+        "month": 2
+      },
+      {
+        "isRegistering": true,
+        "isNew": false,
+        "name": "客製化進階 RWD 手機版網頁設計班 - 假日班",
+        "teacher": "李建杭 (Amos Lee)",
+        "month": 3
+      },
+      {
+        "isRegistering": true,
+        "isNew": false,
+        "name": "Vue.js 與 Vuex 前端開發實戰課程 - 假日班",
+        "teacher": "許國政 (Kuro Hsu)",
+        "month": 3
+      }
+    ]
+  },
+  "recommend": {
+    "title": "網頁課程推薦",
+    "text": [
+      {
+        "content": "Programmer 最有價值的是經驗值，「五倍紅寶石」的導師都是社群內數一數二的資深 Rubyist，由他們來帶領學員一探 Ruby 世界的神奇之處，實在是最佳選擇。",
+        "name": "Victor Lam",
+        "job": "連續創業家，自由工作者"
+      },
+      {
+        "content": "Eddie and his team are of the most dedicated Ruby evangelists I have ever come across. With their passion and professionalism, Ruby learners will leapfrog in their progress.",
+        "name": "Jason Hs",
+        "job": "founder of The Big Questions & TEDxTaipei"
+      },
+      {
+        "content": "還在尋找專業的 Ruby/Rails 師資嗎？別懷疑了，台灣最頂尖的 Rubyist 盡在「五倍紅寶石」！",
+        "name": "Felix Lin",
+        "job": "dappei.com 「搭配」網站創辦人"
+      },
+      {
+        "content": "慕凡和龍哥是業界數一數二的 Ruby 大師，他們不光是底子深厚，也很懂得引導、訓練學習路上遇到挫折的 Ruby/Rails 學子。很慶幸有他們的協助讓我進入紅寶石的美妙世界。",
+        "name": "Hana Chang",
+        "job": "Co-Founder and CEO of BountyHunter"
+      },
+      {
+        "content": "選擇程式語言很重要，但選擇優秀的導師更重要！能跟擁有多年 Ruby/Rails 實戰經驗、活躍於社群的頂尖 Rubyist 學習，將一窺程式開發殿堂之藝術！我堅信：專業事讓專業的來，而專業的「五倍紅寶石」是寶藏，就等大家來挖掘。",
+        "name": "John Sie",
+        "job": "Accuvally Inc.共同創辦人暨營運長"
+      },
+      {
+        "content": "「五倍紅寶石」的導師們都是業界經驗豐富的實戰高手，提供的課程及咨詢絕對能讓你大幅省去自行摸索的時間。",
+        "name": "Ben Li",
+        "job": "連續創業家，自由工作者"
+      }
+    ]
+  },
+  "showcase": {
+    "title": "案例作品 Showcase",
+    "text": [
+      {
+        "title": "SpaceNextDoor",
+        "content": "Space Next Door is inspired by the sharing economy in which we hope to encourage people to put up their unused space so that users looking for personal or business storage space have better options, closer to where they need it. We are striving to build a trusted community marketplace for you to list, discover and book the nearest and best space at affordable prices."
+      },
+      {
+        "title": "Shopmatic Go app",
+        "content": "Shopmatic Go is an exciting online platform where you can create a unique and comprehensive online store for your business, in a matter of minutes."
+      },
+      {
+        "title": "跨境電子商務 Shopmatic",
+        "content": "Shopmatic manages the entire ecosystem for anyone wanting to sell online. We go the extra mile to ensure that we help you in every step of the process to grow your business online - from developing your own unique webstore, to listing you on marketplaces and social channels, to providing you insights on how to sell online."
+      }
+    ],
+    "explain": {
+      "title": "想更瞭解我們嗎？",
+      "content": [
+        { "text": "您可以看看", "isLink": false },
+        { "text": "常見問題", "isLink": true },
+        { "text": "或者直接", "isLink": false },
+        { "text": "線上洽詢", "isLink": true },
+        {
+          "text": "，會有親切的客服人員回答您的問題，也可以透過社群網站隨時關注我們的動態。",
+          "isLink": false
+        }
+      ]
+    }
+  },
+  "footer": {
+    "image": ["", "找工作"],
+    "link": [
+      { "text": "關於五倍紅寶石", "link": "/" },
+      { "text": "媒體報導", "link": "/" },
+      { "text": "團隊成員", "link": "/" },
+      { "text": "聯絡詢價", "link": "/contacts" },
+      { "text": "常見問題", "link": "/" },
+      { "text": "工作機會", "link": "/" },
+      { "text": "開源專案", "link": "/" },
+      { "text": "隱私權條款", "link": "/" },
+      { "text": "服務條款", "link": "/" }
+    ],
+    "tel": "02-2331-5247",
+    "time": "Mon - Fri / 09:30 - 22:00",
+    "email": "hi@5xruby.tw",
+    "address": "10046 台北市中正區衡陽路 7 號 5 樓",
+    "contact": [
+      "© 2014 - 2020 五倍紅寶石股份有限公司 (5XRUBY CO., LTD)",
+      "台北市短期補習班立案 第 7594 號"
+    ]
+  },
+  "contact": {
+    "title": "有任何問題嗎？馬上聯絡我們！",
+    "name": "五倍紅寶石股份有限公司",
+    "address": "10046 台北市中正區衡陽路 7 號 5 樓",
+    "content": [
+      { "text": "02-2331-5247", "type": "Tel" },
+      { "text": "02-2331-8717", "type": "Fax" },
+      { "text": "0928-617-687", "type": "Mobile" },
+      { "text": "24536806", "type": "統編" },
+      { "text": "hi@5xruby.tw", "type": "E-mail", "isLink": true }
+    ],
+    "formTitle": "任何問題都歡迎您透過以下表單詢問，我們會盡快回覆您！",
+    "choice": [
+      { "text": "請選擇主題" },
+      { "text": "專案開發", "value": "專案開發" },
+      { "text": "技術諮詢", "value": "技術諮詢" },
+      { "text": "企業內訓", "value": "企業內訓" },
+      { "text": "課程詢問", "value": "課程詢問" }
+    ]
+  },
+  "post": {
+    "title": "最新消息",
+    "subTitle": "關於五倍還有更多你可以發掘的，都在這邊說給你知！"
+  }
+}

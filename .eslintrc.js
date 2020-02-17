@@ -19,6 +19,10 @@ module.exports = {
   rules: {
     semi: ['error', 'never'],
     'comma-dangle': ['error', 'never'],
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }]
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'jsx-quotes': ['error', 'prefer-single'],
+    'arrow-parens': ['error', 'as-needed'],
+    'arrow-body-style': ['error', 'always'],
+    'react/jsx-one-expression-per-line': 'off'
   }
 }
