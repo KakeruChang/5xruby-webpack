@@ -54,6 +54,9 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
+  "engines": {
+    "node": "^13.8.0"
+  },
   "prettier": {
     "singleQuote": true,
     "jsxSingleQuote": true,
