@@ -49,6 +49,25 @@ const Carousel = props => {
     setNextIndex(targetNext)
   }
 
+  const moveToActive = index => {
+    let time = 0
+    if (index - activeIndex >= 0) {
+      for (let i = activeIndex; i < index + 1; i += 1) {
+        setTimeout(() => {
+          forceActive(i)
+        }, time)
+        time += 1000
+      }
+    } else {
+      for (let i = activeIndex; i > index - 1; i -= 1) {
+        setTimeout(() => {
+          forceActive(i)
+        }, time)
+        time += 1000
+      }
+    }
+  }
+
   const stopCarousel = () => {
     clearTimeout(timer)
     setIsStopped(true)
@@ -72,7 +91,9 @@ const Carousel = props => {
             className={classNames('indicator-btn', {
               active: i === activeIndex
             })}
-            onClick={() => forceActive(i)}
+            onClick={() => {
+              return moveToActive(i)
+            }}
             aria-hidden='true'
           />
         </li>
@@ -110,8 +131,9 @@ const Carousel = props => {
     if (!isStopped) {
       changeActive(img.length)
     }
-    return () => clearTimeout(timer)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => {
+      return clearTimeout(timer)
+    }
   }, [activeIndex, isStopped])
 
   return (

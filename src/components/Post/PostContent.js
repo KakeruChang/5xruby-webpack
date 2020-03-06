@@ -13,7 +13,6 @@ const PostContent = () => {
 
   useEffect(() => {
     dispatch({ type: UPDATE_POST, postData: fetchData })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchData])
 
   useEffect(() => {

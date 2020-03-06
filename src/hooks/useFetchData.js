@@ -9,7 +9,9 @@ const useFetchData = (initialValue = []) => {
 
   useEffect(() => {
     fetch(api)
-      .then(response => response.json())
+      .then(response => {
+        return response.json()
+      })
       .then(json => {
         setFetchData(json)
         if (error) {
@@ -22,7 +24,6 @@ const useFetchData = (initialValue = []) => {
           throw new Error(err)
         })
       })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return { fetchData, error }

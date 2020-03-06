@@ -6,7 +6,9 @@ import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
 import PostContent from './PostContent'
 import '../../scss/post.scss'
-import ErrorBoundary from '../Error/ErrorBoundary'
+import WithErrorBoundary from '../Error/WithErrorBoundary'
+
+const PostContentWithError = WithErrorBoundary(PostContent)
 
 const Post = props => {
   const { Img, data } = props
@@ -48,9 +50,10 @@ const Post = props => {
           </div>
         </div>
       </div>
-      <ErrorBoundary>
+      {/* <ErrorBoundary>
         <PostContent />
-      </ErrorBoundary>
+      </ErrorBoundary> */}
+      <PostContentWithError />
     </div>
   )
 }
