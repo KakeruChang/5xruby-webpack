@@ -133,6 +133,9 @@
     width: 100%;
   }
 }
+.carousel-img-force-active {
+  transition: transform 0.1s ease-in-out;
+}
 // hot lesson
 .hot-lesson-item {
   transition: all 0.3s;

@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 const Carousel = props => {
-  const { img } = props
-  let timer = null
+  const { CarouselArray, indicatorClass, indicatorDistance } = props
   const [isStopped, setIsStopped] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
-  const [preIndex, setPreIndex] = useState(img.length - 1 || 0)
+  const [preIndex, setPreIndex] = useState(CarouselArray.length - 1 || 0)
   const [nextIndex, setNextIndex] = useState(1)
+  const [isForced, setIsForced] = useState(false)
+  let timer = null
 
   const changeActive = length => {
     let target = 0
@@ -37,9 +38,9 @@ const Carousel = props => {
     let targetPre = target - 1
     let targetNext = target + 1
     if (targetPre < 0) {
-      targetPre = img.length - 1
+      targetPre = CarouselArray.length - 1
     }
-    if (targetNext > img.length - 1) {
+    if (targetNext > CarouselArray.length - 1) {
       targetNext = 0
     }
 
@@ -51,19 +52,30 @@ const Carousel = props => {
 
   const moveToActive = index => {
     let time = 0
+    setIsForced(true)
     if (index - activeIndex >= 0) {
       for (let i = activeIndex; i < index + 1; i += 1) {
         setTimeout(() => {
           forceActive(i)
         }, time)
-        time += 1000
+        if (i === index) {
+          setTimeout(() => {
+            setIsForced(false)
+          }, 1000)
+        }
+        time += 100
       }
     } else {
       for (let i = activeIndex; i > index - 1; i -= 1) {
         setTimeout(() => {
           forceActive(i)
         }, time)
-        time += 1000
+        if (i === index) {
+          setTimeout(() => {
+            setIsForced(false)
+          }, 1000)
+        }
+        time += 100
       }
     }
   }
@@ -88,7 +100,7 @@ const Carousel = props => {
       indicatorArray.push(
         <li key={i}>
           <span
-            className={classNames('indicator-btn', {
+            className={classNames(indicatorClass, {
               active: i === activeIndex
             })}
             onClick={() => {
@@ -107,6 +119,7 @@ const Carousel = props => {
         <div
           className={classNames(
             'carousel-img',
+            { 'carousel-img-force-active': isForced },
             {
               active: index === activeIndex
             },
@@ -119,9 +132,10 @@ const Carousel = props => {
           )}
           onMouseEnter={stopCarousel}
           onMouseLeave={continueCarousel}
-          key={item}
+          key={item.id}
         >
-          <img src={item} alt='' />
+          {/* <img src={item} alt='' /> */}
+          {CarouselArray[index].item}
         </div>
       )
     })
@@ -129,7 +143,7 @@ const Carousel = props => {
 
   useEffect(() => {
     if (!isStopped) {
-      changeActive(img.length)
+      changeActive(CarouselArray.length)
     }
     return () => {
       return clearTimeout(timer)
@@ -137,17 +151,20 @@ const Carousel = props => {
   }, [activeIndex, isStopped])
 
   return (
-    <div className='mt-nav'>
-      <div className='carousel-wrapper'>
-        <div className='carousel-imgs'>{carouselItem(img)}</div>
-        <ul className='carousel-index'>{indicator(img.length)}</ul>
-      </div>
+    <div
+      className='carousel-wrapper'
+      style={{ paddingBottom: indicatorDistance }}
+    >
+      <div className='carousel-imgs'>{carouselItem(CarouselArray)}</div>
+      <ul className='carousel-index'>{indicator(CarouselArray.length)}</ul>
     </div>
   )
 }
 
 Carousel.propTypes = {
-  img: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
+  CarouselArray: PropTypes.arrayOf(PropTypes.any).isRequired,
+  indicatorClass: PropTypes.string.isRequired,
+  indicatorDistance: PropTypes.string.isRequired
 }
 
 export default Carousel

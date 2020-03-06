@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Carousel from './Carousel'
+import MainImg from './MainImg'
 import MainMenu from './MainMenu'
 import HotLessons from './HotLesson'
 import Recommend from './Recommend'
@@ -13,7 +13,7 @@ const HomePage = props => {
 
   return (
     <>
-      <Carousel img={Img.carouselImg} />
+      <MainImg img={Img.carouselImg} />
       <MainMenu data={data.mainMenu} img={Img.mainMenuImg} />
       <HotLessons data={data.hotLesson} img={Img.hotLessonImg} />
       <Recommend data={data.recommend} img={Img.recommendImg} />
