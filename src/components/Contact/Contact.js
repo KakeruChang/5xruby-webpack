@@ -20,14 +20,43 @@ const Contact = props => {
   })
   const [isShow, setIsShow] = useState(false)
 
+  const checkEmail = email => {
+    if (email.indexOf('@') === -1) {
+      return true
+    }
+    return false
+  }
+
+  const checkPhone = phone => {
+    const rule1 = /^[0]{1}\d{1}[- ](\d{8}|\d{7})$/.test(phone)
+    const rule2 = /^[0]{1}[9]{1}\d{2}[- ]\d{6}$/.test(phone)
+    if (!rule1 && !rule2) {
+      return true
+    }
+    return false
+  }
+
   const checkInput = event => {
     const { name, value, required } = event.target
     const origin = { ...info }
 
     if (value) {
-      if (origin[name].isEmpty) {
+      if (name === 'email') {
+        if (checkEmail(value)) {
+          origin[name].isEmpty = 'email格式錯誤'
+        } else if (origin[name].isEmpty) {
+          origin[name].isEmpty = false
+        }
+      } else if (name === 'phone') {
+        if (checkPhone(value)) {
+          origin[name].isEmpty = '電話格式必須是09xx-xxxxxx 或是 0x-xxxx-xxxx'
+        } else if (origin[name].isEmpty) {
+          origin[name].isEmpty = false
+        }
+      } else if (origin[name].isEmpty) {
         origin[name].isEmpty = false
       }
+
       origin[name].value = value
       setInfo(origin)
     } else if (required) {
@@ -47,6 +76,17 @@ const Contact = props => {
       if (!info[item].value) {
         origin[item].isEmpty = true
         isAnyEmpty = true
+      } else {
+        if (item === 'email') {
+          if (checkEmail(origin[item].value)) {
+            isAnyEmpty = true
+          }
+        }
+        if (item === 'phone') {
+          if (checkPhone(origin[item].value)) {
+            isAnyEmpty = true
+          }
+        }
       }
     })
 
@@ -147,6 +187,9 @@ const Contact = props => {
                   placeholder='信箱'
                   required
                 />
+                {info.email.isEmpty && (
+                  <span className='text-danger'>{info.email.isEmpty}</span>
+                )}
               </div>
               <div className='form-group'>
                 <input
@@ -162,6 +205,9 @@ const Contact = props => {
                   placeholder='電話'
                   required
                 />
+                {info.phone.isEmpty && (
+                  <span className='text-danger'>{info.phone.isEmpty}</span>
+                )}
               </div>
               <div className='form-group'>
                 <select
