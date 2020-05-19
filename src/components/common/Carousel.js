@@ -2,98 +2,66 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-const Carousel = props => {
+import '../../scss/Carousel.scss'
+
+const Carousel = (props) => {
+  const { setTimeout } = window
+  const interval = {
+    pass: 1000,
+    stopped: 5000
+  }
+  const timer = {
+    active: 0,
+    inactive: 0
+  }
   const { CarouselArray, indicatorClass, indicatorDistance } = props
+  const { length } = CarouselArray
+  const [active, setActive] = useState(0)
+  const [inactive, setInactive] = useState(length - 1)
   const [isStopped, setIsStopped] = useState(false)
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [preIndex, setPreIndex] = useState(CarouselArray.length - 1 || 0)
-  const [nextIndex, setNextIndex] = useState(1)
-  const [isForced, setIsForced] = useState(false)
-  let timer = null
 
-  const changeActive = length => {
-    let target = 0
-    if (activeIndex !== length - 1) {
-      target = activeIndex + 1
-    }
-
-    let targetPre = target - 1
-    let targetNext = target + 1
-    if (targetPre < 0) {
-      targetPre = length - 1
-    }
-    if (targetNext > length - 1) {
-      targetNext = 0
-    }
-
-    timer = setTimeout(() => {
-      setActiveIndex(target)
-      setPreIndex(targetPre)
-      setNextIndex(targetNext)
-    }, 5000)
-  }
-
-  const forceActive = index => {
-    const target = index
-    let targetPre = target - 1
-    let targetNext = target + 1
-    if (targetPre < 0) {
-      targetPre = CarouselArray.length - 1
-    }
-    if (targetNext > CarouselArray.length - 1) {
-      targetNext = 0
-    }
-
-    clearTimeout(timer)
-    setActiveIndex(target)
-    setPreIndex(targetPre)
-    setNextIndex(targetNext)
-  }
-
-  const moveToActive = index => {
-    let time = 0
-    setIsForced(true)
-    if (index - activeIndex >= 0) {
-      for (let i = activeIndex; i < index + 1; i += 1) {
-        setTimeout(() => {
-          forceActive(i)
-        }, time)
-        if (i === index) {
-          setTimeout(() => {
-            setIsForced(false)
-          }, 1000)
-        }
-        time += 100
+  const changeActive = (aim) => {
+    timer.active = setTimeout(() => {
+      if (active < length - 1) {
+        setActive(aim)
+        setInactive(active)
+      } else {
+        setActive(0)
+        setInactive(active)
       }
-    } else {
-      for (let i = activeIndex; i > index - 1; i -= 1) {
-        setTimeout(() => {
-          forceActive(i)
-        }, time)
-        if (i === index) {
-          setTimeout(() => {
-            setIsForced(false)
-          }, 1000)
-        }
-        time += 100
-      }
-    }
+    }, interval.stopped)
+    timer.inactive = setTimeout(() => {
+      setInactive(null)
+    }, interval.pass)
   }
 
   const stopCarousel = () => {
-    clearTimeout(timer)
+    if (timer.active) {
+      clearTimeout(timer.active)
+    }
     setIsStopped(true)
   }
+
   const continueCarousel = () => {
     setIsStopped(false)
-    timer = setTimeout(() => {
-      setActiveIndex(activeIndex)
-      setPreIndex(preIndex)
-      setNextIndex(nextIndex)
-    }, 5000)
+    timer.active = setTimeout(() => {}, interval.stopped)
   }
 
-  const indicator = num => {
+  const forceActive = (aim) => {
+    if (aim !== active) {
+      clearTimeout(timer.active)
+      clearTimeout(timer.inactive)
+
+      setActive(aim)
+      setInactive(active)
+
+      timer.inactive = setTimeout(() => {
+        setInactive(null)
+      }, interval.pass)
+    }
+  }
+
+  const indicator = (num) => {
     const indicatorArray = []
 
     for (let i = 0; i < num; i += 1) {
@@ -101,10 +69,10 @@ const Carousel = props => {
         <li key={i}>
           <span
             className={classNames(indicatorClass, {
-              active: i === activeIndex
+              active: i === active
             })}
             onClick={() => {
-              return moveToActive(i)
+              return forceActive(i)
             }}
             aria-hidden='true'
           />
@@ -113,49 +81,43 @@ const Carousel = props => {
     }
     return indicatorArray
   }
-  const carouselItem = imgs => {
-    return imgs.map((item, index) => {
-      return (
-        <div
-          className={classNames(
-            'carousel-img',
-            { 'carousel-img-force-active': isForced },
-            {
-              active: index === activeIndex
-            },
-            {
-              left: index === preIndex
-            },
-            {
-              right: index === nextIndex
-            }
-          )}
-          onMouseEnter={stopCarousel}
-          onMouseLeave={continueCarousel}
-          key={item.id}
-        >
-          {/* <img src={item} alt='' /> */}
-          {CarouselArray[index].item}
-        </div>
-      )
-    })
-  }
 
   useEffect(() => {
     if (!isStopped) {
-      changeActive(CarouselArray.length)
+      changeActive(active + 1)
     }
+
     return () => {
-      return clearTimeout(timer)
+      if (timer.active) {
+        clearTimeout(timer.active)
+      }
     }
-  }, [activeIndex, isStopped])
+    // eslint-disable-next-line
+  }, [active, isStopped])
 
   return (
     <div
       className='carousel-wrapper'
       style={{ paddingBottom: indicatorDistance }}
     >
-      <div className='carousel-imgs'>{carouselItem(CarouselArray)}</div>
+      {/* <div style={styles.wrapper}> */}
+      {CarouselArray.map((item, index) => {
+        return (
+          <div
+            className={classNames(
+              'carousel-item',
+              { active: active === index },
+              { inactive: inactive === index }
+            )}
+            onMouseEnter={stopCarousel}
+            onMouseLeave={continueCarousel}
+            key={item.id}
+          >
+            {/* <div style={styles.item} key={`${index * index}`}> */}
+            {item.item}
+          </div>
+        )
+      })}
       <ul className='carousel-index'>{indicator(CarouselArray.length)}</ul>
     </div>
   )

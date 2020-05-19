@@ -6,11 +6,11 @@ import useWindowSize from '../../hooks/useWindowSize'
 import constants from '../../data/constants'
 import Carousel from '../common/Carousel'
 
-const Recommend = props => {
+const Recommend = (props) => {
   const { data, img } = props
   const { width } = useWindowSize()
 
-  const CarouselArray = datas => {
+  const CarouselArray = (datas) => {
     const result = []
     datas.text.forEach((item, index) => {
       result.push({

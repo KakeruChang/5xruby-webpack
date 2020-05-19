@@ -3,13 +3,16 @@ import PropTypes from 'prop-types'
 
 import Carousel from '../common/Carousel'
 
-const MainImg = props => {
+const MainImg = (props) => {
   const { img } = props
 
-  const CarouselArray = imgs => {
+  const CarouselArray = (imgs) => {
     const result = []
     imgs.forEach((item, index) => {
-      result.push({ item: <img src={item} alt='' />, id: `mainImg${index}` })
+      result.push({
+        item: <img className='w-100' src={item} alt='' />,
+        id: `mainImg${index}`
+      })
     })
     return result
   }

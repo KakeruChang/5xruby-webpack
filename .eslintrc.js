@@ -18,10 +18,10 @@ module.exports = {
   plugins: ['react'],
   rules: {
     semi: ['error', 'never'],
-    'comma-dangle': ['error', 'never'],
+    'comma-dangle': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'jsx-quotes': ['error', 'prefer-single'],
-    'arrow-parens': ['error', 'as-needed'],
+    'arrow-parens': 'off',
     'arrow-body-style': ['error', 'always'],
     'react/jsx-one-expression-per-line': 'off'
   }
